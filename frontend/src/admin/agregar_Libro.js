@@ -328,7 +328,7 @@ const Formulario = () => {
                     className="btn btn-primary"
                     onClick={() => handleEdit(index)}
                   >
-                    Editar
+                    Editar.
                   </button>
                 </td>
               </tr>
