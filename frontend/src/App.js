@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//import CryptoJS from "crypto-js";
 import Inicio from "./components/inicio";
 import LoginAdmin from "./admin/login_Admin";
 import LoginUssers from "./usuario/login_Ussers";
@@ -8,13 +9,11 @@ import SolicitudPrestamoExterno from "./usuario/SolicitudPrestamoExterno";
 import SolicitudPrestamoIntero from "./usuario/SolicitudPrestamoInterno";
 import AgregarUssers from "./admin/agregarUsuarios";
 import AgregarLibro from "./admin/agregar_Libro";
-import PaletaPrestamos from "./admin/Paleta_Prestamos";
 import NavbarAdmin from "./navbar/NavbarAdmin";
 import NavbarUsuarios from "./navbar/NavbarUsuarios";
 import InicioAdmin from "./admin/InicioAdmin";
 import InicioUsuario from "./usuario/InicioUsuario";
 import LibrosDisponibles from "./usuario/LibrosDisponibles";
-import BlogForm from "./admin/BlogForm";
 
 // import "./components/css/navbar.css";
 //import axios from 'axios';
@@ -25,9 +24,25 @@ import BlogForm from "./admin/BlogForm";
 // import Blogs from "./components/Blogs";
 
 function App() {
+  /*const cifrar = (texto) => {
+    var textoCifrado = CryptoJS.AES.encrypt(texto, "@borjascript").toString();
+    return textoCifrado;
+  };
+
+  const descifrar = (texto) => {
+    var bytes = CryptoJS.AES.decrypt(texto, "@borjascript");
+    var textoCifrado = bytes.toString(CryptoJS.enc.Utf8);
+    return textoCifrado;
+  };*/
   return (
     <Router>
       <div class="container">
+        {/* <p>texto cifrado: {cifrar("hola")}</p>
+        <p>
+          texto decifrado:
+          {descifrar("U2FsdGVkX1+qVv1v+iSgKLE/VJC/rnNUC65e7xOha0k=")}
+        </p> */}
+
         {/* <NavbarAdmin /> */}
         {/* <br />
         <div className="btn-group">
@@ -70,14 +85,6 @@ function App() {
           <Route path="/admin/agregarLibro" exact>
             <NavbarAdmin />
             <AgregarLibro />
-          </Route>
-          <Route path="/admin/prestamos" exact>
-            <NavbarAdmin />
-            <PaletaPrestamos />
-          </Route>
-          <Route path="/admin/blogForm" exact>
-            <NavbarAdmin />
-            <BlogForm />
           </Route>
           {/* Usuario */}
           <Route path="/usuario" exact>
